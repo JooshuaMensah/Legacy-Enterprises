@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: legacy
+      POSTGRES_PASSWORD: legacy
+      POSTGRES_DB: legacy_enterprises
+    ports:
+      - "5432:5432"
+    volumes:
+      - legacy_pgdata:/var/lib/postgresql/data
+volumes:
+  legacy_pgdata:
