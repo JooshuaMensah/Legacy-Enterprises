@@ -1,0 +1,59 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "postgresql" url = env("DATABASE_URL") }
+
+enum Role { CUSTOMER ADMIN AGENT }
+enum OrderStatus { PENDING_PAYMENT PAID PROCESSING DELIVERED FAILED CANCELLED }
+enum PaymentStatus { PENDING SUCCESS FAILED }
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  phone        String?
+  passwordHash String
+  role         Role     @default(CUSTOMER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  orders       Order[]
+}
+
+model Bundle {
+  id        String   @id @default(cuid())
+  network   String
+  name      String
+  price     Decimal  @db.Decimal(10,2)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+  @@unique([network, name])
+  @@index([network, active])
+}
+
+model Order {
+  id                String        @id @default(cuid())
+  reference         String        @unique
+  userId            String
+  bundleId          String
+  recipientPhone    String
+  amount            Decimal       @db.Decimal(10,2)
+  status            OrderStatus   @default(PENDING_PAYMENT)
+  provider          String?
+  providerReference String?
+  paymentStatus     PaymentStatus @default(PENDING)
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  user              User          @relation(fields:[userId], references:[id])
+  bundle            Bundle        @relation(fields:[bundleId], references:[id])
+  @@index([userId, createdAt])
+  @@index([status, createdAt])
+  @@index([providerReference])
+}
+
+model WebhookEvent {
+  id        String   @id @default(cuid())
+  eventId   String   @unique
+  event     String
+  payload   Json
+  createdAt DateTime @default(now())
+}

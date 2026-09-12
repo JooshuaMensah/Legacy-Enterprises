@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy Enterprises | Data, Airtime & Digital Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">L</span>
+      <span><b>LEGACY</b><strong>ENTERPRISES</strong><small>Fast · Reliable · Affordable</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#bundles">Buy Bundles</a>
+      <a href="#agent">Agents</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+      <a class="login-link" href="admin.html">Admin</a>
+      <button class="btn btn-yellow" onclick="openLogin()">Login</button>
+      <button class="btn btn-yellow" onclick="openRegister()">Register</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="pill">Ghana's Trusted Digital Services Platform</span>
+      <h1>Buy Data, Airtime & <span>More with Ease</span></h1>
+      <p>LEGACY ENTERPRISES makes it simple, fast and secure to buy mobile data, airtime and other digital services. Get your bundles in seconds and stay connected always!</p>
+      <div class="hero-actions">
+        <a href="#bundles" class="btn btn-yellow btn-lg">Buy Data Now →</a>
+        <a href="https://wa.me/233548032159" target="_blank" class="whatsapp">◉ Chat on WhatsApp<br><b>0548032159</b></a>
+      </div>
+      <div class="trust-row">
+        <span>⚡ Instant<br><b>Delivery</b></span>
+        <span>♢ Secure<br><b>Payments</b></span>
+        <span>◉ 24/7<br><b>Support</b></span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="phone-woman">Stay<br>Connected<br>Always</div>
+      <div class="network n1">MTN</div><div class="network n2">airteltigo</div><div class="network n3">t<br>telecel</div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container service-grid">
+    <button class="service active">◎<b>Data Bundles</b></button>
+    <button class="service" onclick="showToast('Airtime purchase is ready in the payment form.')">▯<b>Airtime</b></button>
+    <button class="service" onclick="showToast('ECG Bills can be connected to your provider API.')">♧<b>ECG Bills</b></button>
+    <button class="service" onclick="showToast('Water Bills can be connected to your provider API.')">◯<b>Water Bills</b></button>
+    <button class="service" onclick="showToast('TV subscriptions can be connected to your provider API.')">▣<b>TV Subscriptions</b></button>
+    <button class="service" onclick="showToast('More digital services can be added from the admin panel.')">▦<b>More Services</b></button>
+  </div>
+</section>
+
+<section id="bundles" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <div><h2>Popular Data Bundles</h2><p>Choose your network and get the best bundle rates in Ghana.</p></div>
+      <a href="#bundles">View all bundles →</a>
+    </div>
+    <div id="bundleGrid" class="bundle-grid"></div>
+  </div>
+</section>
+
+<section class="how section">
+  <div class="container">
+    <h2>How It Works</h2><p>Get your bundle in just a few simple steps.</p>
+    <div class="steps">
+      <div><i>01</i><b>Select Network</b><span>Choose MTN, AirtelTigo or Telecel</span></div>
+      <div><i>02</i><b>Choose Bundle</b><span>Pick your preferred data plan</span></div>
+      <div><i>03</i><b>Enter Number</b><span>Input your mobile number</span></div>
+      <div><i>04</i><b>Pay with MoMo</b><span>Secure and easy payment</span></div>
+      <div><i>05</i><b>Get Your Bundle</b><span>Receive your data instantly</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="agent" class="agent-banner">
+  <div class="container agent-grid">
+    <div>
+      <h2>Become a <span>LEGACY ENTERPRISES</span> Agent</h2>
+      <p>Start your own digital business today!</p>
+      <div class="checks"><span>✓ Wholesale prices</span><span>✓ Track your sales & profits</span><span>✓ Earn on every sale</span><span>✓ Easy withdrawals</span><span>✓ Personal agent dashboard</span><span>✓ Referral rewards</span></div>
+      <button class="btn btn-yellow" onclick="openRegister()">Register as an Agent →</button>
+    </div>
+    <div class="agent-person">More<br>Customers.<br><b>More Profits.</b></div>
+  </div>
+</section>
+
+<section id="about" class="why section">
+  <div class="container">
+    <h2>Why Choose LEGACY ENTERPRISES?</h2><p>Your satisfaction is our priority.</p>
+    <div class="why-grid">
+      <div>◌<b>Fast & Reliable</b><span>Get your bundles instantly.</span></div>
+      <div>◉<b>Best Prices</b><span>Competitive rates across all networks.</span></div>
+      <div>♢<b>Secure</b><span>Your transactions are protected.</span></div>
+      <div>◉<b>24/7 Support</b><span>We're always here to help.</span></div>
+      <div class="help-card"><b>Need Help?</b><span>Chat with us on WhatsApp</span><strong>0548032159</strong><a href="https://wa.me/233548032159" target="_blank" class="btn btn-green">Chat on WhatsApp →</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="container footer">
+    <div class="brand"><span class="brand-mark">L</span><span><b>LEGACY</b><strong>ENTERPRISES</strong><small>Fast · Reliable · Affordable</small></span></div>
+    <div class="footer-links"><a href="#home">Home</a><a href="#bundles">Buy Bundles</a><a href="#agent">Agents</a><a href="#about">About Us</a><a href="#contact">Contact</a></div>
+    <div>© 2026 Legacy Enterprises. All rights reserved.</div>
+  </div>
+</footer>
+
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
